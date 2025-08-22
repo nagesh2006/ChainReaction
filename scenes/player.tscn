@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt3dlib0jfg4p"]
+[gd_scene load_steps=3 format=3 uid="uid://dt3dlib0jfg4p"]
 
 [ext_resource type="Script" uid="uid://cfmekkh8crw8j" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dgms30735vm78" path="res://scenes/bomb.tscn" id="2_g2els"]
 
 [node name="player" type="Node2D"]
 script = ExtResource("1_3vyb7")
+bomb_scene = ExtResource("2_g2els")

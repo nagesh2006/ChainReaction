@@ -6,6 +6,7 @@ var exploded := false
 signal bomb_exploded
 
 func _ready() -> void:
+	scale = Vector2(0.8, 0.8)
 	$CollisionShape2D.shape.radius = 10
 	await get_tree().create_timer(fuse_time).timeout
 	explode()
@@ -19,7 +20,7 @@ func explode() -> void:
 
 	# Expand explosion radius
 	var tween := create_tween()
-	tween.tween_property($CollisionShape2D.shape, "radius", explosion_radius, 200)
+	tween.tween_property($CollisionShape2D.shape, "radius", explosion_radius, 0.2)
 
 	$Sprite2D.modulate = Color.RED
 
