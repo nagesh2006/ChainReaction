@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://uehf5i11bymg"]
+[gd_scene load_steps=3 format=3 uid="uid://uehf5i11bymg"]
 
 [ext_resource type="Script" uid="uid://b2fjmxu1k76d1" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dt3dlib0jfg4p" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dgms30735vm78" path="res://scenes/bomb.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://cmw61ore15rh5" path="res://scenes/enemy.tscn" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://mq3h7i8ekslr" path="res://scripts/levelloader.gd" id="2_jyhfs"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_jyhfs")
@@ -16,23 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.117647, 0.117647, 0.117647, 1)
 
-[node name="player" parent="." instance=ExtResource("1_o5qli")]
-bomb_scene = ExtResource("2_sugp2")
-
-[node name="enemes" type="Node" parent="."]
-
-[node name="enemy" parent="enemes" instance=ExtResource("3_jyhfs")]
-position = Vector2(242, 153)
-scale = Vector2(5, 5)
-
-[node name="enemy2" parent="enemes" instance=ExtResource("3_jyhfs")]
-position = Vector2(263, 346)
-scale = Vector2(5, 5)
-
-[node name="enemy3" parent="enemes" instance=ExtResource("3_jyhfs")]
-position = Vector2(435, 237)
-scale = Vector2(5, 5)
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="StatusLabel" type="Label" parent="UI"]
@@ -44,3 +25,8 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "\"\""
 horizontal_alignment = 1
+
+[node name="levelRoot" type="Node2D" parent="."]
+
+[node name="LevelLoader" type="Node2D" parent="."]
+script = ExtResource("2_jyhfs")

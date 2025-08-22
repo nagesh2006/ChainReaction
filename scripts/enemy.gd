@@ -17,7 +17,6 @@ func trigger_explosion() -> void:
 	$CollisionShape2D.shape.radius = explosion_radius
 
 	for body in get_overlapping_bodies():
-		
 		if body.is_in_group("enemies") and not body.exploded:
 			body.trigger_explosion()
 
